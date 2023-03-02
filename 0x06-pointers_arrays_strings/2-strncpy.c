@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 #include <string.h>
 /**
  * _strncpy - copy n bytes from a string to another
