@@ -7,12 +7,13 @@
  * @index: unsigned int
  * @n: unsigned int long
  *
- * Return: value of the bit at index or -1 
+ * Return: value of the bit at index or -1
  */
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if(index >= (sizeof(unsigned long int) * 8)){
+	if (index >= sizeof(unsigned long int) * 8)
+	{
 		return (-1);
 	}
 	return ((n >> index) & 1);
