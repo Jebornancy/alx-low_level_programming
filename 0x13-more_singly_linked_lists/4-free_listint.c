@@ -10,8 +10,8 @@
  */
 
 void free_listint(listint_t *head)
-{       
-	
+{
+
 	listint_t *current;
 
 	while (head != NULL)
@@ -23,5 +23,5 @@ void free_listint(listint_t *head)
 	}
 
 
-}       
+}
 
