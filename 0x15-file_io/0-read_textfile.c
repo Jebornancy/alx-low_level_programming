@@ -30,7 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buf == NULL)
 		return (0);
 
-	bytes_read = fread(buf, sizeof(char), letters, file)
+	bytes_read = fread(buf, sizeof(char), letters, file);
 	if (bytes_read == 0)
 	return (0);
 
