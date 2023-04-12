@@ -42,7 +42,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fclose(file);
 
 	return (bytes_read);
-
-
 }
 
