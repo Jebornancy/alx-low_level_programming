@@ -9,8 +9,8 @@ int main(int argc, char *argv[]);
 
 /**
  * main - Copies the contents of a file to another file.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * @argc: argument count
+ * @argc: argument vector
  * Return: 0 on success.
  */
 int main(int argc, char *argv[])
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 /**
  * print_usage - prints usage message and exits with code 97
- * @program_name: the name of the program
+ * @program_name: name of the program
  * Return: none
  */
 void print_usage(char *program_name)
@@ -35,10 +35,10 @@ void print_usage(char *program_name)
 }
 
 /**
- * copy_file - copies contents of one file to another file
- * @file_from: the name of the source file
- * @file_to: the name of the destination file
- * Return: 0 on success, or exit with the appropriate error code
+ * copy_file - copies contents of one file to another 
+ * @file_from: source file
+ * @file_to: destination file
+ * Return: 0 on success,  exit otherwise
  */
 int copy_file(char *file_from, char *file_to)
 {
