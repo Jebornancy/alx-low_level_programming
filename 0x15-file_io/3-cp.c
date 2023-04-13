@@ -10,7 +10,7 @@ int main(int argc, char *argv[]);
 /**
  * main - Copies the contents of a file to another file.
  * @argc: argument count
- * @argc: argument vector
+ * @argv: argument vector
  * Return: 0 on success.
  */
 int main(int argc, char *argv[])
@@ -35,7 +35,7 @@ void print_usage(char *program_name)
 }
 
 /**
- * copy_file - copies contents of one file to another 
+ * copy_file - copies contents of one file to another
  * @file_from: source file
  * @file_to: destination file
  * Return: 0 on success,  exit otherwise
