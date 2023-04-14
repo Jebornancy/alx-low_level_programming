@@ -1,46 +1,35 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include "main.h"
-
 /**
- * read_textfile - reads a text file and prints it to POSIX stdout
- * @filename: pointer to a strin
- * @letters: number of letters to be read and printed
- *
- * Return: bytes read
+ * read_textfile - Reads a text file and prints it to the POSIX stdout
+ * @filename: name of the file to read
+ * @letters: number of letters to read and print
+ * Return: actual number of letters read and printed, otherwise 0
  */
-
-
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buf;
-	ssize_t bytes_read, bytes_written;
-	FILE *file;
+	int file_descriptor;
+	ssize_t bytes_written, bytes_read;
+	char *buffer;
 
 	if (filename == NULL)
 		return (0);
 
-	file = fopen(filename, "r");
-	if (file == NULL)
+	file_descriptor = open(filename, O_RDONLY);
+
+	if (file_descriptor == -1)
 		return (0);
 
-	buf = malloc(letters * sizeof(char));
-	if (buf == NULL)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 		return (0);
+	bytes_read = read(file_descriptor, buffer, letters);
+	bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
 
-	bytes_read = fread(buf, sizeof(char), letters, file);
-	if (bytes_read == 0)
-	return (0);
+	close(file_descriptor);
 
-	bytes_written = write(STDOUT_FILENO, buf, bytes_read);
-	if (bytes_written == -1 || bytes_written != bytes_read)
-		return (0);
+	free(buffer);
 
-	free(buf);
-	fclose(file);
-
-	return (bytes_read);
+	return (bytes_written);
 }
-
