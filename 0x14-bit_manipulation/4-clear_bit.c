@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-	
+
 
 /**
 * clear_bit - sets the value of a bit to 0 at a given index
@@ -16,9 +16,9 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	{
 		return (-1);
 	}
-	
+
 	*n &= ~(1UL << index);
-	
+
 	return (1);
 }
 
